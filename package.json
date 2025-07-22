@@ -1,0 +1,69 @@
+{
+  "name": "sanity-plugin-frontify-dam",
+  "version": "1.0.0",
+  "description": "Connect your Frontify Digital Asset Management to your Studio schema as a custom field, letting users authenticate, browse, and select brand-approved assets with ease and serve them via CDN. Go further by optimizing and transforming rich media on the fly using our Media Processing API—boosting performance, enhancing brand experiences, and saving your team time and effort.",
+  "keywords": [
+    "sanity",
+    "sanity-plugin"
+  ],
+  "license": "MIT",
+  "author": "Frontify <developer@frontify.com>",
+  "sideEffects": false,
+  "type": "commonjs",
+  "exports": {
+    ".": {
+      "source": "./src/index.ts",
+      "import": "./dist/index.mjs",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "sanity.json",
+    "src",
+    "v2-incompatible.js"
+  ],
+  "scripts": {
+    "build": "plugin-kit verify-package --silent && pkg-utils build --strict --check --clean",
+    "format": "prettier --write --cache --ignore-unknown .",
+    "link-watch": "plugin-kit link-watch",
+    "lint": "eslint .",
+    "prepublishOnly": "npm run build",
+    "watch": "pkg-utils watch --strict"
+  },
+  "dependencies": {
+    "@frontify/frontify-finder": "^3.0.1",
+    "@sanity/incompatible-plugin": "^1.0.5",
+    "@sanity/ui": "^2.16.7"
+  },
+  "devDependencies": {
+    "@sanity/pkg-utils": "^7.9.5",
+    "@sanity/plugin-kit": "^4.0.19",
+    "@types/react": "^19.1.8",
+    "@typescript-eslint/eslint-plugin": "^8.37.0",
+    "@typescript-eslint/parser": "^8.37.0",
+    "eslint": "^8.57.1",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-config-sanity": "^7.1.4",
+    "eslint-plugin-prettier": "^5.5.1",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "prettier": "^3.6.2",
+    "prettier-plugin-packagejson": "^2.5.18",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "sanity": "^4.0.1",
+    "styled-components": "^6.1.19",
+    "typescript": "^5.8.3"
+  },
+  "peerDependencies": {
+    "react": "^18",
+    "sanity": "^3"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
