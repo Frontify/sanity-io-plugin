@@ -7,7 +7,7 @@ A Sanity plugin that integrates the Frontify Finder as a custom asset source, al
 ## Features
 
 - Select images from Frontify directly in Sanity Studio
-- Configurable client ID and filters
+- Configurable filters for asset selection
 - Support for single or multiple asset selection
 - Automatically transforms Frontify assets to Sanity-compatible format
 - Preserves asset metadata and source information
@@ -24,13 +24,13 @@ Add it as a plugin in `sanity.config.ts` (or .js):
 
 ```ts
 import {defineConfig} from 'sanity'
-import {myPlugin} from 'sanity-plugin-frontify-dam'
+import {frontifyPlugin} from 'sanity-plugin-frontify-dam'
 
 export default defineConfig({
   // ... other config
   plugins: [
     frontifyPlugin({
-      clientId: 'your-frontify-client-id',
+      domain: 'your-frontify-domain',
       allowMultiSelect: false,
       filters: [
         {
@@ -48,7 +48,7 @@ export default defineConfig({
 
 The plugin accepts the following configuration options:
 
-- `clientId` (string): Your Frontify client ID
+- `domain` (string): The domain of the Frontify instance - the end user will be promped for this if it is not provided in the config
 - `allowMultiSelect` (boolean): Whether to allow multiple asset selection (default: false)
 - `filters` (array): Array of filters to apply to the asset selection
 
@@ -62,7 +62,7 @@ You can also use the asset source directly in specific fields:
 
 ```ts
 import {defineField, defineType} from 'sanity'
-import {frontifyAssetSource} from 'sanity-plugin-frontify'
+import {frontifyAssetSource} from 'sanity-plugin-frontify-dam'
 
 export default defineType({
   name: 'post',
@@ -77,7 +77,6 @@ export default defineType({
         hotspot: true,
         sources: [
           frontifyAssetSource({
-            clientId: 'your-client-id',
             allowMultiSelect: false,
             filters: [
               {
@@ -97,7 +96,6 @@ export default defineType({
 ## Requirements
 
 - Sanity Studio v3 or later
-- Valid Frontify client ID
 - React 18+
 
 ## License

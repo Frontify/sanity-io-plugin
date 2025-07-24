@@ -20,7 +20,7 @@ export function FrontifyAssetSource({
 
   const config: OpeningOptions = useMemo(
     () => ({
-      clientId: userConfig?.clientId || '',
+      clientId: 'sanity-finder',
       options: {
         allowMultiSelect: userConfig?.allowMultiSelect || false,
         autoClose: false,
@@ -78,7 +78,6 @@ export function FrontifyAssetSource({
           const asset = assets[0] // Single asset selection
           console.log('Selected asset:', asset)
           console.log('Available URLs:', {
-            url: asset.url,
             downloadUrl: asset.downloadUrl,
             previewUrl: asset.previewUrl,
             dynamicPreviewUrl: asset.dynamicPreviewUrl,
@@ -88,16 +87,16 @@ export function FrontifyAssetSource({
           // Transform FrontifyAsset to Sanity asset format
           const sanityAsset: SanityAsset = {
             kind: 'url',
-            value: asset.dynamicPreviewUrl || asset.previewUrl || asset.downloadUrl || asset.url,
+            value: asset.dynamicPreviewUrl || asset.previewUrl || asset.downloadUrl || '',
             assetDocumentProps: {
-              originalFilename: asset.filename || `${asset.name}.${asset.extension || 'jpg'}`,
+              originalFilename: asset.filename || `${asset.title}.${asset.extension || 'jpg'}`,
               source: {
                 name: 'frontify',
                 id: asset.id,
-                url: asset.url,
+                url: asset.previewUrl || asset.downloadUrl || '',
               },
-              title: asset.title || asset.name,
-              description: asset.description || asset.title || asset.name || '',
+              title: asset.title,
+              description: asset.description || asset.title || '',
               creditLine: `By Frontify`,
             },
           }

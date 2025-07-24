@@ -1,4 +1,5 @@
 import {definePlugin} from 'sanity'
+
 import {frontifyAssetSource} from './assetSource'
 import {FrontifyPluginConfig} from './types'
 
@@ -13,8 +14,6 @@ import {FrontifyPluginConfig} from './types'
  *   // ...
  *   plugins: [
  *     frontifyPlugin({
- *       clientId: 'your-frontify-client-id',
- *       allowMultiSelect: false,
  *       filters: [
  *         {
  *           key: "object_type",
@@ -40,5 +39,5 @@ export const frontifyPlugin = definePlugin<FrontifyPluginConfig>((config = {}) =
 
 // Export the asset source for direct use
 export {frontifyAssetSource} from './assetSource'
-export type {FrontifyPluginConfig, FrontifyAsset, SanityAsset} from './types'
 export {FrontifyAssetSource} from './components/FrontifyAssetSource'
+export type {FrontifyAsset, FrontifyPluginConfig, SanityAsset} from './types'

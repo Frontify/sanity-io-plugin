@@ -1,7 +1,7 @@
-import { AssetSourceComponentProps } from 'sanity'
+import {AssetSourceComponentProps} from 'sanity'
 
 export interface FrontifyPluginConfig {
-  clientId?: string
+  domain?: string
   allowMultiSelect?: boolean
   filters?: Array<{
     key: string
@@ -11,9 +11,10 @@ export interface FrontifyPluginConfig {
 }
 
 // Re-export FrontifyAsset from the module
-export type { FrontifyAsset } from '@frontify/frontify-finder'
+export type {FrontifyAsset} from '@frontify/frontify-finder'
 
 export interface FrontifyAssetSourceProps extends AssetSourceComponentProps {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   onSelect: (assets: any[]) => void
   onClose: () => void
   config?: FrontifyPluginConfig
