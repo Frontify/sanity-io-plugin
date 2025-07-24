@@ -1,5 +1,5 @@
 {
-  "name": "sanity-plugin-frontify-dam",
+  "name": "@frontify/sanity-plugin-frontify",
   "version": "1.0.0",
   "description": "Connect your Frontify Digital Asset Management to your Studio schema as a custom field, letting users authenticate, browse, and select brand-approved assets with ease and serve them via CDN. Go further by optimizing and transforming rich media on the fly using our Media Processing API—boosting performance, enhancing brand experiences, and saving your team time and effort.",
   "keywords": [
