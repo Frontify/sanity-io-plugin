@@ -6,6 +6,10 @@
     "sanity",
     "sanity-plugin"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Frontify/sanity-io-plugin.git"
+  },
   "license": "MIT",
   "author": "Frontify <developer@frontify.com>",
   "sideEffects": false,
