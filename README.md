@@ -1,10 +1,10 @@
 # Frontify DAM > Sanity
 
+![Frontify demo](https://raw.githubusercontent.com/Frontify/sanity-io-plugin/main/assets/Sanity_Frontify_Plugin.gif)
+
 A Sanity plugin that integrates the Frontify Finder, Frontify asset chooser, as a custom asset source, allowing users to select images from Frontify directly within their Sanity Studio.
 
 > This is a **Sanity Studio v3** plugin.
-
-![Frontify demo](/assets/Sanity_Frontify_Plugin.gif)
 
 ## Features
 
