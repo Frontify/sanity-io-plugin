@@ -64,7 +64,7 @@
     "typescript": "^5.8.3"
   },
   "peerDependencies": {
-    "react": "^18",
+    "react": "^18 || ^19.1.0",
     "sanity": "^3"
   },
   "engines": {
