@@ -41,7 +41,7 @@
   "dependencies": {
     "@frontify/frontify-finder": "^3.0.1",
     "@sanity/incompatible-plugin": "^1.0.5",
-    "@sanity/ui": "^2.16.7"
+    "@sanity/ui": "^3.0.0"
   },
   "devDependencies": {
     "@sanity/pkg-utils": "^7.9.5",
